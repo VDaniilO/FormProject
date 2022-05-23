@@ -57,8 +57,8 @@ class FormAPIList(generics.ListCreateAPIView):
     serializer_class = FormsFieldSerializer
 
 
-class FormAPIUpdate(generics.ListCreateAPIView):
+class FormAPIUpdate(generics.RetrieveUpdateAPIView):
 
-    queryset = FieldModels.objects.all()
-    serializer_class = FormsFieldSerializer
+    queryset = FormModels.objects.all()
+    serializer_class = FormsSerializer
     lookup_field = 'form_number'
